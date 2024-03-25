@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://b8h61a2jndjc1"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_i5q01"]
+[ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="1_rjdol"]
+[ext_resource type="PackedScene" uid="uid://c1u0x5xuioc6j" path="res://gun.tscn" id="3_xfh2p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s48tu"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_su02l"]
+radius = 36.0555
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m1m4k"]
+bg_color = Color(0.129412, 0.129412, 0.129412, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xc5o3"]
+bg_color = Color(0.0235294, 0.717647, 0.376471, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Player" type="CharacterBody2D"]
+platform_floor_layers = 0
+script = ExtResource("1_i5q01")
+
+[node name="HappyBoo" parent="." instance=ExtResource("1_rjdol")]
+texture_filter = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_s48tu")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Gun" parent="." instance=ExtResource("3_xfh2p")]
+position = Vector2(0, -46)
+
+[node name="HurtBox" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+scale = Vector2(0.978554, 1)
+shape = SubResource("CircleShape2D_su02l")
+debug_color = Color(0.956863, 0.145098, 0.368627, 0.419608)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -85.0
+offset_top = -134.0
+offset_right = 85.0
+offset_bottom = -107.0
+theme_override_styles/background = SubResource("StyleBoxFlat_m1m4k")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xc5o3")
+value = 100.0
+show_percentage = false
