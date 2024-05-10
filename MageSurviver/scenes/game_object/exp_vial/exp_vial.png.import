@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d22070rc0wcw1"
-path="res://.godot/imported/tile_0128.png-68f93af87f17f01c4fb310e94da0f34a.ctex"
+path="res://.godot/imported/exp_vial.png-1cee821c28641df30d6c4a8d41bf92be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://kenney_assets/Tiles/tile_0128.png"
-dest_files=["res://.godot/imported/tile_0128.png-68f93af87f17f01c4fb310e94da0f34a.ctex"]
+source_file="res://scenes/game_object/exp_vial/exp_vial.png"
+dest_files=["res://.godot/imported/exp_vial.png-1cee821c28641df30d6c4a8d41bf92be.ctex"]
 
 [params]
 
