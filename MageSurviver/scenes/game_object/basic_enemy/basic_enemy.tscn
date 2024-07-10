@@ -23,7 +23,8 @@ script = ExtResource("1_8qo22")
 [node name="VialDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_sg65d")]
 health_component = NodePath("../HealthComponent")
 
-[node name="HurtboxComponent" parent="." instance=ExtResource("4_4id3b")]
+[node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_4id3b")]
+health_component = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
 position = Vector2(0, -4)

@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scenes/game_object/exp_vial/exp_vial.gd" id="1_djsbs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_in0yv"]
-radius = 16.0
+radius = 11.0
 
 [node name="ExperienceVial" type="Node2D"]
 script = ExtResource("1_djsbs")
