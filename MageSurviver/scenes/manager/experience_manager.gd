@@ -17,7 +17,7 @@ func on_exp_vial_collected(number: float):
 
 
 func increment_exp(number: float):
-	current_exp += min(current_exp + number, target_experience)
+	current_exp = min(current_exp + number, target_experience)
 	experience_updated.emit(current_exp, target_experience)
 	
 	if(current_exp == target_experience):
