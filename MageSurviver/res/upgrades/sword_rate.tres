@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dt8odi4p4nbfs"]
+
+[ext_resource type="Script" path="res://res/upgrades/ability_upgrade.gd" id="1_eqiyg"]
+
+[resource]
+script = ExtResource("1_eqiyg")
+id = "sword_rate"
+name = "Swing CD"
+description = "Increases Sword Attack Rate by 10%."
