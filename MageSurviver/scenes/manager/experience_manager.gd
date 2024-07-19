@@ -7,7 +7,7 @@ const TARGET_EXP_GROWTH = 5
 
 var current_exp = 0
 var current_level = 1
-var target_experience = 5
+var target_experience = 1
 
 func _ready():
 	GameEvents.exp_vial_collected.connect(increment_exp)
