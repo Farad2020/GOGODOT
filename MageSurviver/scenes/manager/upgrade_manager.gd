@@ -19,7 +19,7 @@ func on_level_up(new_level: int):
 	add_child(upgradeScreen)
 	upgradeScreen.set_ability_upgrades([chosen_upgrade] as Array[AbilityUpgrade])
 	
-	
+	upgradeScreen.upgrade_selected.connect(on_upgrade_selected)
 	
 	
 
@@ -33,3 +33,6 @@ func apply_upgrade(upgrade: AbilityUpgrade):
 		}
 	else:
 		curr_upgrades[upgrade.id]["quantity"] += 1
+
+func on_upgrade_selected(upgrade: AbilityUpgrade):
+	apply_upgrade(upgrade)
