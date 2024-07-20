@@ -19,5 +19,10 @@ func on_died():
 		return
 	
 	var new_exp_vial = exp_vial.instantiate() as Node2D
-	(owner as Node2D).get_parent().add_child(new_exp_vial)
+	var entities_layer = get_tree().get_first_node_in_group("entities_layer")
+	
+	if(entities_layer == null):
+		return
+		
+	entities_layer.add_child(new_exp_vial)
 	new_exp_vial.global_position = (owner as Node2D).global_position
