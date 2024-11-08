@@ -1,17 +1,21 @@
-[gd_scene load_steps=11 format=3 uid="uid://bnh0xtvatuu28"]
+[gd_scene load_steps=13 format=3 uid="uid://bnh0xtvatuu28"]
 
 [ext_resource type="PackedScene" uid="uid://bp5ungu5a1grh" path="res://scenes/ui/arena_time_ui.tscn" id="1_2p2qm"]
+[ext_resource type="Script" path="res://scenes/main/main.gd" id="1_3a0vu"]
 [ext_resource type="PackedScene" uid="uid://ndh12oj3d4pw" path="res://scenes/game_object/game_camera/game_camera.tscn" id="1_4wd4m"]
 [ext_resource type="PackedScene" uid="uid://dud2upjtf00tj" path="res://scenes/game_object/exp_vial/exp_vial.tscn" id="1_62rhy"]
 [ext_resource type="PackedScene" uid="uid://c32kk8g5dr5kx" path="res://scenes/game_object/player/player.tscn" id="1_bddtd"]
 [ext_resource type="TileSet" uid="uid://bgh8rc4ce4mkr" path="res://res/tileset.tres" id="1_f1a0y"]
 [ext_resource type="PackedScene" uid="uid://b3m5tgl8mhsnx" path="res://scenes/manager/enemy_manager.tscn" id="1_phfem"]
+[ext_resource type="PackedScene" uid="uid://5ogl0y8ixkow" path="res://scenes/ui/end_screen.tscn" id="2_e5418"]
 [ext_resource type="PackedScene" uid="uid://b22welorftsb2" path="res://scenes/manager/arena_time_manager.tscn" id="2_gknqv"]
 [ext_resource type="PackedScene" uid="uid://bmaqxkn08hupj" path="res://scenes/ui/experience_bar.tscn" id="2_lfrk5"]
 [ext_resource type="PackedScene" uid="uid://brmlbca3fy3wb" path="res://scenes/manager/experience_manager.tscn" id="4_pi4q3"]
 [ext_resource type="PackedScene" uid="uid://dclgqasap0vkx" path="res://scenes/manager/upgrade_manager.tscn" id="6_ba3ju"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_3a0vu")
+end_screen = ExtResource("2_e5418")
 
 [node name="ArenaTimeUI" parent="." node_paths=PackedStringArray("arena_time_manager") instance=ExtResource("1_2p2qm")]
 arena_time_manager = NodePath("../ArenaTimeManager")
@@ -42,6 +46,7 @@ position = Vector2(560, 335)
 y_sort_enabled = true
 
 [node name="Player" parent="Entities" instance=ExtResource("1_bddtd")]
+unique_name_in_owner = true
 position = Vector2(469, 333)
 
 [node name="Foreground" type="Node2D" parent="." groups=["foreground_layer"]]
