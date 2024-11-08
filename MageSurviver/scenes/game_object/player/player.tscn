@@ -1,9 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://c32kk8g5dr5kx"]
+[gd_scene load_steps=10 format=3 uid="uid://c32kk8g5dr5kx"]
 
 [ext_resource type="Script" path="res://scenes/game_object/player/player.gd" id="1_qph8w"]
 [ext_resource type="PackedScene" uid="uid://dam173kppvoxu" path="res://scenes/ability/sword_ability/sword_ability_controller.tscn" id="2_d0jcq"]
 [ext_resource type="Texture2D" uid="uid://bk5ryc655ycfl" path="res://scenes/game_object/player/player.png" id="2_pogw2"]
 [ext_resource type="PackedScene" uid="uid://celjoeojl5lxq" path="res://scenes/component/health_component.tscn" id="2_se7bd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jk7pp"]
+bg_color = Color(0.247059, 0.14902, 0.192157, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8xy7p"]
+bg_color = Color(0.262745, 0.882353, 0.701961, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.247059, 0.14902, 0.192157, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x57gl"]
 radius = 32.0
@@ -29,13 +40,15 @@ script = ExtResource("1_qph8w")
 wait_time = 0.5
 one_shot = true
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="HealthBar" type="ProgressBar" parent="."]
 custom_minimum_size = Vector2(32, 6)
 offset_left = -16.0
 offset_top = -24.0
 offset_right = 16.0
 offset_bottom = -18.0
 pivot_offset = Vector2(16, 3)
+theme_override_styles/background = SubResource("StyleBoxFlat_jk7pp")
+theme_override_styles/fill = SubResource("StyleBoxFlat_8xy7p")
 max_value = 1.0
 value = 0.5
 show_percentage = false
